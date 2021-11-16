@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "hsrp-angular"
+  },
+  "targets": {
+    "hsrp-angular": {
+      "hosting": {
+        "frontend": [
+          "hsrp-angular"
+        ]
+      }
+    }
+  }
+}

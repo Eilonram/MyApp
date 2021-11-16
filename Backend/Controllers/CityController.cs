@@ -18,7 +18,7 @@ namespace Backend.Controllers
         [HttpGet("")]
         public IEnumerable<string> GetStrings()
         {
-            return new string[] {"Atlanta", "New York", "Chicago"};
+            return new string[] {"Atlanta", "New York", "Chicago","Boston"};
         }
 
     }

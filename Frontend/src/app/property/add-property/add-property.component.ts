@@ -30,6 +30,8 @@ export class AddPropertyComponent implements OnInit {
   Bhk: Array<string> = ['1', '2', '3','4'];
   propertyTypes: Array<string> = ['House', 'Apartment', 'Duplex'];
   furnishTypes: Array<string> = ['Fully', 'Semi', 'Unfurnished'];
+   // @ts-ignore
+  cityList: string[];
 
   propertyView:IPropertyBase = {
     // @ts-ignore
@@ -48,7 +50,7 @@ export class AddPropertyComponent implements OnInit {
     // @ts-ignore
     BuiltArea: null,
     // @ts-ignore
-    City:null,
+    City:'',
     // @ts-ignore
     RTM:null
 
@@ -62,6 +64,10 @@ export class AddPropertyComponent implements OnInit {
 
   ngOnInit() {
     this.CreateAddpropertyForm();
+    this.housingService.getAllCities().subscribe(data => {
+      this.cityList = data;
+      console.log(data);
+    })
   }
   CreateAddpropertyForm(){
     this.addPropertyForm = this.fb.group({
